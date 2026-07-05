@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="manifold control">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="manifold control: verification architecture">
-<meta name="twitter:description" content="verification architecture for organizations deploying ai. live work, rebuilt from source in ci.">
+<meta name="twitter:description" content="verification architecture for organizations deploying ai. work rebuilt from source in ci.">
 <meta name="twitter:image" content="https://manifoldcontrol.com/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314171a'/%3E%3Crect x='7' y='8' width='3' height='16' fill='%235fa66a'/%3E%3Ctext x='14' y='23' font-family='monospace' font-size='15' fill='%23e8e8e8'%3Em%3C/text%3E%3C/svg%3E">
 <style>
@@ -76,8 +76,6 @@
   .card h3 { margin: 0; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
   .card h3 a { color: var(--fg); }
   .card h3 a:hover { color: var(--accent); text-decoration: none; }
-  .tag { font-size: .68rem; border: 1px solid var(--border); border-radius: 999px; padding: .08rem .55rem; color: var(--muted); letter-spacing: .04em; }
-  .tag.live { border-color: var(--accent); color: var(--accent); background: var(--tint); }
   .card p { margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }
   .card .links { display: flex; gap: 1rem; font-size: .88rem; margin-top: .2rem; flex-wrap: wrap; }
 
@@ -109,7 +107,7 @@
   <div class="wrap nav">
     <a class="brand" href="./"><span class="tick">▎</span>manifold control</a>
     <nav class="nav-links" aria-label="site">
-      <a href="#work">live work</a>
+      <a href="#work">work</a>
       <a href="#stack">the stack</a>
       <a href="#about">about</a>
       <a href="https://github.com/manifoldcontrol">github</a>
@@ -124,23 +122,23 @@
     <h1>ai generates claims faster<br>than anyone can check them.</h1>
     <p class="lede">manifold control designs the systems that close that gap. claims get durable identities and auditable verification histories, down to the proof terms a kernel accepted. built for organizations deploying ai where review has to survive scale.</p>
     <div class="cta">
-      <a class="btn primary" href="/csr-seed/">see live work →</a>
+      <a class="btn primary" href="/csr-seed/">see the work →</a>
       <a class="btn" href="mailto:james@manifoldcontrol.com">get in touch</a>
     </div>
   </div>
 
   <section id="work" aria-labelledby="work-h">
     <div class="wrap">
-      <h2 id="work-h">live work</h2>
+      <h2 id="work-h">work</h2>
       <p class="section-sub">running systems, rebuilt from source in ci. this section grows as new work ships.</p>
       <div class="cards">
         <div class="card">
-          <h3><a href="/csr-seed/">csr: live registries</a> <span class="tag live">live</span></h3>
+          <h3><a href="/csr-seed/">csr registries</a></h3>
           <p>a corpus semantic registry: documents define, the registry identifies. the flagship demo is a mathematics preprint's claim table, sha256-pinned against the pdf, alongside two worked examples. edit a pinned source and every dependent claim is flagged in ci until re-verified.</p>
           <div class="links"><a href="/csr-seed/">demo →</a> <a href="https://github.com/manifoldcontrol/csr-seed">source</a></div>
         </div>
         <div class="card">
-          <h3><a href="/csr-seed/fold/">a paper that audits itself</a> <span class="tag live">live</span></h3>
+          <h3><a href="/csr-seed/fold/">a paper that audits itself</a></h3>
           <p>the claim-status table of <em>a singular fold model for capacity-constrained dynamics</em> (v67), maintained machine-readably. each claim carries its verification state and its dependency edges, and any byte change to the pdf flags every claim built on it. this is what "the paper says X" looks like when it is checkable.</p>
           <div class="links"><a href="/csr-seed/fold/">registry →</a> <a href="/csr-seed/fold/paper.pdf">paper (pdf)</a></div>
         </div>
