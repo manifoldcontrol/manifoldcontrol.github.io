@@ -8,13 +8,13 @@
 <link rel="canonical" href="https://manifoldcontrol.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="manifold control: verification architecture">
-<meta property="og:description" content="systems that keep claims, definitions, and proofs auditable at ai scale: registries, provenance, proof-term evidence.">
+<meta property="og:description" content="systems that keep ai-scale work auditable, from claim identity to proof-term evidence.">
 <meta property="og:url" content="https://manifoldcontrol.com/">
 <meta property="og:image" content="https://manifoldcontrol.com/og.png">
 <meta property="og:site_name" content="manifold control">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="manifold control: verification architecture">
-<meta name="twitter:description" content="registries, provenance, and proof-term evidence: live, drift-detected, rebuilt in ci.">
+<meta name="twitter:description" content="verification architecture for organizations deploying ai. live work, rebuilt from source in ci.">
 <meta name="twitter:image" content="https://manifoldcontrol.com/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314171a'/%3E%3Crect x='7' y='8' width='3' height='16' fill='%235fa66a'/%3E%3Ctext x='14' y='23' font-family='monospace' font-size='15' fill='%23e8e8e8'%3Em%3C/text%3E%3C/svg%3E">
 <style>
@@ -81,6 +81,11 @@
   .card p { margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }
   .card .links { display: flex; gap: 1rem; font-size: .88rem; margin-top: .2rem; flex-wrap: wrap; }
 
+  .statband { margin-top: 1.25rem; border: 1px solid var(--border); border-radius: 8px; background: var(--code-bg); padding: 1rem 1.25rem; display: flex; flex-wrap: wrap; gap: .75rem 2rem; align-items: baseline; }
+  .statband .stat { font-size: 1.05rem; font-weight: 700; }
+  .statband .stat span { display: block; font-size: .72rem; color: var(--muted); font-weight: 400; letter-spacing: .04em; }
+  .statband .stat-note { color: var(--muted); font-size: .82rem; flex-basis: 100%; margin: .25rem 0 0; }
+
   .stack { display: grid; gap: .35rem; }
   .stack-row { display: flex; gap: .75rem; flex-wrap: wrap; font-size: .92rem; padding: .45rem 0; border-bottom: 1px dashed var(--border); align-items: baseline; }
   .stack-row:last-child { border-bottom: none; }
@@ -117,7 +122,7 @@
   <div class="wrap hero">
     <p class="eyebrow">verification architecture</p>
     <h1>ai generates claims faster<br>than anyone can check them.</h1>
-    <p class="lede">manifold control designs the systems that keep the volume honest: <b>registries</b> that give every definition one identity, <b>provenance</b> that records what was checked and by which verifier, and <b>proof-term evidence</b> that shows what a kernel actually accepted. built for organizations deploying ai where trust, verification, and decision support have to survive scale.</p>
+    <p class="lede">manifold control designs the systems that close that gap. claims get durable identities and auditable verification histories, down to the proof terms a kernel accepted. built for organizations deploying ai where review has to survive scale.</p>
     <div class="cta">
       <a class="btn primary" href="/csr-seed/">see live work →</a>
       <a class="btn" href="mailto:james@manifoldcontrol.com">get in touch</a>
@@ -131,14 +136,21 @@
       <div class="cards">
         <div class="card">
           <h3><a href="/csr-seed/">csr: live registries</a> <span class="tag live">live</span></h3>
-          <p>a corpus semantic registry: documents define, the registry identifies. three browsable registries: a real mathematics preprint's claim table (19 symbols, 8 proved, 4 open, sha256-pinned against the pdf) plus two worked examples. edit a pinned source and every dependent claim is flagged in ci until re-verified.</p>
+          <p>a corpus semantic registry: documents define, the registry identifies. the flagship demo is a mathematics preprint's claim table, sha256-pinned against the pdf, alongside two worked examples. edit a pinned source and every dependent claim is flagged in ci until re-verified.</p>
           <div class="links"><a href="/csr-seed/">demo →</a> <a href="https://github.com/manifoldcontrol/csr-seed">source</a></div>
         </div>
         <div class="card">
           <h3><a href="/csr-seed/fold/">a paper that audits itself</a> <span class="tag live">live</span></h3>
-          <p>the claim-status table of <em>a singular fold model for capacity-constrained dynamics</em> (v67), maintained machine-readably: per-claim verification state, dependency edges between theorems, and drift detection against the pdf. what "the paper says X" looks like when it's checkable.</p>
+          <p>the claim-status table of <em>a singular fold model for capacity-constrained dynamics</em> (v67), maintained machine-readably. each claim carries its verification state and its dependency edges, and any byte change to the pdf flags every claim built on it. this is what "the paper says X" looks like when it is checkable.</p>
           <div class="links"><a href="/csr-seed/fold/">registry →</a> <a href="/csr-seed/fold/paper.pdf">paper (pdf)</a></div>
         </div>
+      </div>
+      <div class="statband" aria-label="production instance statistics">
+        <div class="stat">1,486<span>symbols</span></div>
+        <div class="stat">191<span>documents</span></div>
+        <div class="stat">97<span>aliases</span></div>
+        <div class="stat">31<span>collisions resolved</span></div>
+        <p class="stat-note">the same machinery runs the private research corpus behind the fold paper. every registry edit lands in a hash-chained audit log. numbers as of july 2026.</p>
       </div>
     </div>
   </section>
@@ -146,11 +158,11 @@
   <section id="stack" aria-labelledby="stack-h">
     <div class="wrap">
       <h2 id="stack-h">the verification stack</h2>
-      <p class="section-sub">open source, mit licensed, each piece usable on its own. identity, provenance, and evidence: the three layers an audit trail needs.</p>
+      <p class="section-sub">open source and mit licensed, each piece usable on its own. together they carry an audit trail from identity through evidence.</p>
       <div class="stack">
         <div class="stack-row">
           <a href="https://github.com/manifoldcontrol/csr-seed">csr-seed</a>
-          <span class="what">corpus semantic registry: one symbol, one definition home, hash-pinned drift detection</span>
+          <span class="what">corpus semantic registry with one definition home per symbol and hash-pinned drift detection</span>
         </div>
         <div class="stack-row">
           <a href="https://github.com/manifoldcontrol/verification-events">verification-events</a>
@@ -162,7 +174,7 @@
         </div>
         <div class="stack-row">
           <a href="https://github.com/manifoldcontrol/fold-registry">fold-registry</a>
-          <span class="what">a mathematics preprint's claim registry, the real-world instance behind the fold demo</span>
+          <span class="what">a mathematics preprint's claim registry, the working instance behind the fold demo</span>
         </div>
       </div>
     </div>
@@ -183,8 +195,8 @@
   <section id="about" aria-labelledby="about-h">
     <div class="wrap about">
       <h2 id="about-h">about</h2>
-      <p>manifold control is the practice of <b>james kovalenko</b> (charlottesville, va): verification architecture and practical ai deployment: systems for trust, verification, and decision support as ai increases the volume of information that must be reviewed.</p>
-      <p>the public work above is the method in miniature: make claims addressable, pin what they depend on, and let a build step say what still holds. the same architecture applies to spec-driven codebases, research corpora, compliance documentation, and ai agent workflows.</p>
+      <p>manifold control is the practice of <b>james kovalenko</b> (charlottesville, va). the work is verification architecture and practical ai deployment, for organizations whose review load grows faster than their review capacity.</p>
+      <p>the public work above is the method in miniature. claims become addressable and pinned, and a build step says what still holds. the same architecture carries over to spec-driven codebases and to ai agent workflows.</p>
       <p><a class="btn primary" href="mailto:james@manifoldcontrol.com">start a conversation →</a></p>
     </div>
   </section>
@@ -199,4 +211,3 @@
 
 </body>
 </html>
-                
