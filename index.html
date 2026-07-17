@@ -79,10 +79,6 @@
   .card p { margin: 0; color: var(--muted); font-size: .88rem; flex: 1; }
   .card .links { display: flex; gap: 1rem; font-size: .88rem; margin-top: .2rem; flex-wrap: wrap; }
 
-  .statband { margin-top: 1.25rem; border: 1px solid var(--border); border-radius: 8px; background: var(--code-bg); padding: 1rem 1.25rem; display: flex; flex-wrap: wrap; gap: .75rem 2rem; align-items: baseline; }
-  .statband .stat { font-size: 1.05rem; font-weight: 700; }
-  .statband .stat span { display: block; font-size: .72rem; color: var(--muted); font-weight: 400; letter-spacing: .04em; }
-  .statband .stat-note { color: var(--muted); font-size: .82rem; flex-basis: 100%; margin: .25rem 0 0; }
 
   .stack { display: grid; gap: .35rem; }
   .stack-row { display: flex; gap: .75rem; flex-wrap: wrap; font-size: .92rem; padding: .45rem 0; border-bottom: 1px dashed var(--border); align-items: baseline; }
@@ -139,16 +135,9 @@
         </div>
         <div class="card">
           <h3><a href="/csr-seed/fold/">a paper that audits itself</a></h3>
-          <p>the claim-status table of <em>a singular fold model for capacity-constrained dynamics</em> (v67), maintained machine-readably. each claim carries its verification state and its dependency edges, and any byte change to the pdf flags every claim built on it. this is what "the paper says X" looks like when it is checkable.</p>
+          <p>the claim-status table of <em>a singular fold model for capacity-constrained dynamics</em> (v74), maintained machine-readably. each claim carries its verification state and its dependency edges, and any byte change to the pdf flags every claim built on it. this is what "the paper says X" looks like when it is checkable.</p>
           <div class="links"><a href="/csr-seed/fold/">registry →</a> <a href="/csr-seed/fold/paper.pdf">paper (pdf)</a></div>
         </div>
-      </div>
-      <div class="statband" aria-label="production instance statistics">
-        <div class="stat">1,486<span>symbols</span></div>
-        <div class="stat">191<span>documents</span></div>
-        <div class="stat">97<span>aliases</span></div>
-        <div class="stat">31<span>collisions resolved</span></div>
-        <p class="stat-note">the same machinery runs the private research corpus behind the fold paper. every registry edit lands in a hash-chained audit log. numbers as of july 2026.</p>
       </div>
     </div>
   </section>
