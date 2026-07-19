@@ -103,8 +103,8 @@
   <div class="wrap nav">
     <a class="brand" href="./"><span class="tick">▎</span>manifold control</a>
     <nav class="nav-links" aria-label="site">
-      <a href="#work">work</a>
-      <a href="#stack">the stack</a>
+      <a href="#work">findings</a>
+      <a href="#stack">machinery</a>
       <a href="#about">about</a>
       <a href="https://github.com/manifoldcontrol">github</a>
       <a href="mailto:james@manifoldcontrol.com">contact</a>
@@ -115,8 +115,8 @@
 <main>
   <div class="wrap hero">
     <p class="eyebrow">verification architecture</p>
-    <h1>ai generates claims faster<br>than anyone can check them.</h1>
-    <p class="lede">the cost shows up later, when a decision leans on a claim nobody re-checked. manifold control builds the layer that keeps every claim checkable as the volume grows, down to the proof terms a kernel accepted.</p>
+    <h1>ai now writes mathematics.<br>we check what the checkers accepted.</h1>
+    <p class="lede">latest finding: all 14 principal theorems of an AI-written Reed&ndash;Solomon formalization verified on its authors' own toolchain, each depending only on the three standard axioms &mdash; and a companion audit of a different AI repository that <em>refuses</em>, naming the two theorems its counterexample still lacks. every verdict below replays from committed evidence with one command.</p>
     <div class="cta">
       <a class="btn primary" href="/csr-seed/">see the work →</a>
       <a class="btn" href="https://github.com/manifoldcontrol/standing-reports">read a report</a>
@@ -125,23 +125,28 @@
 
   <section id="work" aria-labelledby="work-h">
     <div class="wrap">
-      <h2 id="work-h">work</h2>
-      <p class="section-sub">each of these runs in public. every claim on this page is checkable from its links; nothing here asks to be taken on faith.</p>
+      <h2 id="work-h">findings</h2>
+      <p class="section-sub">each entry is a result, with its evidence linked. nothing on this page asks to be taken on faith.</p>
       <div class="cards">
         <div class="card">
-          <h3><a href="https://github.com/manifoldcontrol/standing-reports">standing reports</a></h3>
-          <p>audits of machine-generated mathematics, published with the evidence that produced them: the subject's own build is run at an exact commit, the kernel is asked for the axioms of every principal theorem, and the raw output ships beside the verdict with a frozen evaluator. <code>python3 verify.py</code> replays any verdict field by field. three reports so far; one of them says "null" and names the two missing theorems, which is the point -- a report you cannot refuse with is not an audit.</p>
-          <div class="links"><a href="https://github.com/manifoldcontrol/standing-reports">reports →</a></div>
+          <h3><a href="https://github.com/manifoldcontrol/standing-reports/blob/main/reports/rs-mca-slackmca-v4-3404d21b/REPORT.md">an AI-written Reed&ndash;Solomon formalization holds up</a></h3>
+          <p>the <code>slackMCA_v4</code> Lean package in a third-party research repository &mdash; drafted by one AI system, packaged by another &mdash; formalizes the finitary core of a list-decoding paper: coefficient pigeonhole, quotient-core obstruction, cyclotomic and Fermat-field rigidity, one bad parameter per support. we rebuilt it at its pinned commit and asked the kernel: all 14 principal theorems rest only on the prover&rsquo;s three standard axioms, nothing self-made. a statement-level review against the paper found every divergence a generalization, none a weakening. standing: release_verified; no human expert has reviewed it, and the report says so.</p>
+          <div class="links"><a href="https://github.com/manifoldcontrol/standing-reports/blob/main/reports/rs-mca-slackmca-v4-3404d21b/REPORT.md">report →</a> <a href="https://github.com/przchojecki/rs-mca/tree/main/experimental/lean/slackMCA_v4">subject →</a></div>
         </div>
         <div class="card">
-          <h3><a href="/csr-seed/">csr registries</a></h3>
-          <p>a corpus semantic registry: documents define, the registry identifies. the working demo is a mathematics preprint's claim table, sha256-pinned against the pdf, alongside two worked examples. edit a pinned source and every dependent claim is flagged in ci until re-verified.</p>
-          <div class="links"><a href="/csr-seed/">demo →</a> <a href="https://github.com/manifoldcontrol/csr-seed">source</a></div>
+          <h3><a href="https://github.com/manifoldcontrol/standing-reports/blob/main/reports/grothendieck-rank-four-2efab4e3/REPORT.md">an audit that says no</a></h3>
+          <p>a fully AI-authored repository claims a rank-four counterexample to Grothendieck's question &mdash; a finite locally free group scheme of order four not killed by four. at its first pinned commit, every extracted theorem is axiom-clean, and the verdict is still <strong>null</strong>: the kernel report shows the noncocommutativity theorem and the categorical power-map theorem simply absent from the source, and no attestation can close a missing theorem. at a later commit both exist, axiom-clean, and the same machinery grants standing. the refusal is the credential.</p>
+          <div class="links"><a href="https://github.com/manifoldcontrol/standing-reports/blob/main/reports/grothendieck-rank-four-2efab4e3/REPORT.md">null report →</a> <a href="https://github.com/manifoldcontrol/standing-reports/blob/main/reports/grothendieck-rank-four-94d662fe/REPORT.md">later commit →</a></div>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/przchojecki/rs-mca/blob/main/experimental/lean/rsmca_certificates/RsMcaCertificates.lean">five finite theorems, kernel-checked, integrated upstream</a></h3>
+          <p>five certificates produced by our proof pipeline live in the same third-party repository, integrated by its maintainer. one of them establishes that every element of the field with seventeen elements is a sum of two squares, checked exhaustively by the kernel; the others pin subgroup scales in the fields with seventeen and 257 elements, the size of an elementary-symmetric image, and a dithering window. each was ground-truthed by enumeration before formalization, and each carries its provenance.</p>
+          <div class="links"><a href="https://github.com/przchojecki/rs-mca/blob/main/experimental/lean/rsmca_certificates/RsMcaCertificates.lean">source →</a> <a href="https://github.com/przchojecki/rs-mca/blob/main/experimental/lean/rsmca_certificates/PROVENANCE.md">provenance →</a></div>
         </div>
         <div class="card">
           <h3><a href="/csr-seed/fold/">a paper that audits itself</a></h3>
-          <p>the claim-status table of <em>a singular fold model for capacity-constrained dynamics</em> (v74), maintained machine-readably. each claim carries its verification state and its dependency edges, and any byte change to the pdf flags every claim built on it. this is what "the paper says X" looks like when it is checkable.</p>
-          <div class="links"><a href="/csr-seed/fold/">registry →</a> <a href="/csr-seed/fold/paper.pdf">paper (pdf)</a></div>
+          <p>a dynamical-systems preprint whose central result is an exit guarantee: below explicit thresholds, every trajectory in the congested regime leaves through the cooperative boundary, never approaching the fold, in a time given exactly to leading order. eight results proved, four open problems stated as open &mdash; three legs of the remaining blow-up analysis are proven, the gluing between them is not, and the paper's machine-readable claim table says exactly that. any byte change to the pdf flags every claim built on it until re-verified.</p>
+          <div class="links"><a href="/csr-seed/fold/">claim table →</a> <a href="/csr-seed/fold/paper.pdf">paper (pdf) →</a></div>
         </div>
       </div>
     </div>
@@ -149,51 +154,20 @@
 
   <section id="stack" aria-labelledby="stack-h">
     <div class="wrap">
-      <h2 id="stack-h">the verification stack</h2>
-      <p class="section-sub">five open-source pieces that compose into one audit trail, from naming a claim to publishing a replayable verdict on it.</p>
-      <div class="stack">
-        <div class="stack-row">
-          <a href="https://github.com/manifoldcontrol/csr-seed">csr-seed</a>
-          <span class="what">corpus semantic registry with one definition home per symbol and hash-pinned drift detection</span>
-        </div>
-        <div class="stack-row">
-          <a href="https://github.com/manifoldcontrol/verification-events">verification-events</a>
-          <span class="what">content-hashed provenance events for every verification act (schema + stdlib-only python)</span>
-        </div>
-        <div class="stack-row">
-          <a href="https://github.com/manifoldcontrol/lean-introspect">lean-introspect</a>
-          <span class="what">lean 4 <code>#introspect</code>: proof-term dag + leakage report (sorry, mvars, dependency surface)</span>
-        </div>
-        <div class="stack-row">
-          <a href="https://github.com/manifoldcontrol/fold-registry">fold-registry</a>
-          <span class="what">a mathematics preprint's claim registry, the working instance behind the fold demo</span>
-        </div>
-        <div class="stack-row">
-          <a href="https://github.com/manifoldcontrol/standing-reports">standing-reports</a>
-          <span class="what">what the other four compose into: audits with their evidence attached, every verdict replayable with one command</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="principles-h">
-    <div class="wrap">
-      <h2 id="principles-h">three rules that hold throughout</h2>
-      <p class="section-sub">the discipline underneath all of it.</p>
-      <div class="principles">
-        <div class="principle"><p><b>events record standing decisions.</b> the deciding happens elsewhere.</p></div>
-        <div class="principle"><p><b>events reference identities.</b> the registry mints them.</p></div>
-        <div class="principle"><p><b>credit derives from events.</b> the flow runs one way.</p></div>
-      </div>
+      <h2 id="stack-h">the machinery</h2>
+      <p class="section-sub">five small open-source pieces produce the findings above:
+      <a href="https://github.com/manifoldcontrol/lean-introspect">lean-introspect</a> (proof-term and axiom extraction) &middot;
+      <a href="https://github.com/manifoldcontrol/verification-events">verification-events</a> (hashed, replayable provenance) &middot;
+      <a href="https://github.com/manifoldcontrol/csr-seed">csr-seed</a> (claim identity and drift detection) &middot;
+      <a href="https://github.com/manifoldcontrol/fold-registry">fold-registry</a> (the fold paper's claim table) &middot;
+      <a href="https://github.com/manifoldcontrol/standing-reports">standing-reports</a> (the verdicts and their evidence).</p>
     </div>
   </section>
 
   <section id="about" aria-labelledby="about-h">
-    <div class="wrap about">
+    <div class="wrap">
       <h2 id="about-h">about</h2>
-      <p>manifold control is the practice of <b>james kovalenko</b> (charlottesville, va). the work is verification architecture for output produced faster than it can be reviewed: ai-generated mathematics, spec-driven code, agent workflows.</p>
-      <p>the public work above applies it to the hardest case, mathematics, where the checker is a proof kernel and every claim pins to bytes. five kernel-checked certificates from this pipeline are integrated in a third-party research repository, with full provenance.</p>
-      <p>when someone asks whether a result still holds, the answer is a build away.</p>
+      <p>manifold control is the practice of <b>james kovalenko</b> (charlottesville, va): independent verification of machine-generated work, with mathematics as the proving ground because there the checker is a proof kernel and every claim pins to bytes. when someone asks whether a result still holds, the answer is a build away.</p>
       <p><a class="btn primary" href="mailto:james@manifoldcontrol.com">email →</a></p>
     </div>
   </section>
