@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>manifold control: verification architecture</title>
-<meta name="description" content="Manifold Control helps organizations design systems for trust, verification, and decision support as AI increases the volume of information that must be reviewed. Practical AI deployment and verification architecture.">
+<meta name="description" content="Verification architecture for output produced faster than it can be reviewed. Audits of machine-generated mathematics with their evidence attached: every verdict replays with one command.">
 <link rel="canonical" href="https://manifoldcontrol.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="manifold control: verification architecture">
-<meta property="og:description" content="systems that keep ai-scale work auditable, from claim identity to proof-term evidence.">
+<meta property="og:description" content="Verification architecture for output produced faster than it can be reviewed. Every verdict replays with one command.">
 <meta property="og:url" content="https://manifoldcontrol.com/">
 <meta property="og:image" content="https://manifoldcontrol.com/og.png">
 <meta property="og:site_name" content="manifold control">
@@ -119,18 +119,23 @@
     <p class="lede">the cost shows up later, when a decision leans on a claim nobody re-checked. manifold control builds the layer that keeps every claim checkable as the volume grows, down to the proof terms a kernel accepted.</p>
     <div class="cta">
       <a class="btn primary" href="/csr-seed/">see the work →</a>
-      <a class="btn" href="mailto:james@manifoldcontrol.com">ask if this fits</a>
+      <a class="btn" href="https://github.com/manifoldcontrol/standing-reports">read a report</a>
     </div>
   </div>
 
   <section id="work" aria-labelledby="work-h">
     <div class="wrap">
       <h2 id="work-h">work</h2>
-      <p class="section-sub">each of these is a working system, a small public version of what we build for clients.</p>
+      <p class="section-sub">each of these runs in public. every claim on this page is checkable from its links; nothing here asks to be taken on faith.</p>
       <div class="cards">
         <div class="card">
+          <h3><a href="https://github.com/manifoldcontrol/standing-reports">standing reports</a></h3>
+          <p>audits of machine-generated mathematics, published with the evidence that produced them: the subject's own build is run at an exact commit, the kernel is asked for the axioms of every principal theorem, and the raw output ships beside the verdict with a frozen evaluator. <code>python3 verify.py</code> replays any verdict field by field. three reports so far; one of them says "null" and names the two missing theorems, which is the point -- a report you cannot refuse with is not an audit.</p>
+          <div class="links"><a href="https://github.com/manifoldcontrol/standing-reports">reports →</a></div>
+        </div>
+        <div class="card">
           <h3><a href="/csr-seed/">csr registries</a></h3>
-          <p>a corpus semantic registry: documents define, the registry identifies. the flagship demo is a mathematics preprint's claim table, sha256-pinned against the pdf, alongside two worked examples. edit a pinned source and every dependent claim is flagged in ci until re-verified.</p>
+          <p>a corpus semantic registry: documents define, the registry identifies. the working demo is a mathematics preprint's claim table, sha256-pinned against the pdf, alongside two worked examples. edit a pinned source and every dependent claim is flagged in ci until re-verified.</p>
           <div class="links"><a href="/csr-seed/">demo →</a> <a href="https://github.com/manifoldcontrol/csr-seed">source</a></div>
         </div>
         <div class="card">
@@ -145,7 +150,7 @@
   <section id="stack" aria-labelledby="stack-h">
     <div class="wrap">
       <h2 id="stack-h">the verification stack</h2>
-      <p class="section-sub">four open-source pieces that fit together into one audit trail, from naming a claim to proving it.</p>
+      <p class="section-sub">five open-source pieces that compose into one audit trail, from naming a claim to publishing a replayable verdict on it.</p>
       <div class="stack">
         <div class="stack-row">
           <a href="https://github.com/manifoldcontrol/csr-seed">csr-seed</a>
@@ -162,6 +167,10 @@
         <div class="stack-row">
           <a href="https://github.com/manifoldcontrol/fold-registry">fold-registry</a>
           <span class="what">a mathematics preprint's claim registry, the working instance behind the fold demo</span>
+        </div>
+        <div class="stack-row">
+          <a href="https://github.com/manifoldcontrol/standing-reports">standing-reports</a>
+          <span class="what">what the other four compose into: audits with their evidence attached, every verdict replayable with one command</span>
         </div>
       </div>
     </div>
@@ -182,10 +191,10 @@
   <section id="about" aria-labelledby="about-h">
     <div class="wrap about">
       <h2 id="about-h">about</h2>
-      <p>manifold control is the practice of <b>james kovalenko</b> (charlottesville, va). the work is verification architecture and practical ai deployment, for organizations whose review load grows faster than their review capacity.</p>
-      <p>the public work above is the method in miniature. claims become addressable and pinned, and a build step says what still holds. the same architecture carries over to spec-driven codebases and to ai agent workflows.</p>
-      <p>the changed state is simple. when someone asks whether a result still holds, the answer is a build away.</p>
-      <p><a class="btn primary" href="mailto:james@manifoldcontrol.com">walk us through your situation →</a></p>
+      <p>manifold control is the practice of <b>james kovalenko</b> (charlottesville, va). the work is verification architecture for output produced faster than it can be reviewed: ai-generated mathematics, spec-driven code, agent workflows.</p>
+      <p>the public work above applies it to the hardest case, mathematics, where the checker is a proof kernel and every claim pins to bytes. five kernel-checked certificates from this pipeline are integrated in a third-party research repository, with full provenance.</p>
+      <p>when someone asks whether a result still holds, the answer is a build away.</p>
+      <p><a class="btn primary" href="mailto:james@manifoldcontrol.com">email →</a></p>
     </div>
   </section>
 </main>
